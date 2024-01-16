@@ -1,13 +1,13 @@
-// import type { NextPage } from "next";
-import { useLoadScript } from "@react-google-maps/api";
+
+import { useLoadScript ,LoadScript} from "@react-google-maps/api";
 import Map from "../components/Map";
-
+const lib = ['places'];
+const key = ''; 
 const Home = () => {
-  const { isLoaded } = useLoadScript({
-    googleMapsApiKey: "", // Add your API key
-  });
-
-  return isLoaded ? <Map /> : null;
+  return <LoadScript googleMapsApiKey={key} libraries={lib}>
+  <Map />
+  </LoadScript> ;
 };
 
 export default Home;
+
